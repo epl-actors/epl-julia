@@ -9,5 +9,13 @@ mutable struct Executor
     minority_vote_ratio::Float16
 end
 
-ex = Executor(72, [], [[]], 7, 3, 0.03)
-print(typeof(ex.gc_stored_odors))
+exec = Executor(72, [], [[]], 7, 3, 0.03)
+# print(typeof(exec.gc_stored_odors))
+
+function train(exec::Executor, train_data)
+    exec.gc_stored_odors = train_data
+end
+
+train_data = [[3, 4, 5], [7, 8, 9], [2, 4, 6]]
+train(exec, train_data)
+print("stored odors: ", exec.gc_stored_odors)
