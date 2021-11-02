@@ -18,4 +18,5 @@ end
 
 train_data = [[3, 4, 5], [7, 8, 9], [2, 4, 6]]
 train(exec, train_data)
-print("stored odors: ", exec.gc_stored_odors)
+println("stored odors: ", exec.gc_stored_odors)
+println("num_sensors: $(exec.num_sensors)")
